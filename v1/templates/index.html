@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Library Management System</h1>
+
+    <h2>Books</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        {{range .Books}}
+        <tr>
+            <td>{{.ID}}</td>
+            <td>{{.Title}}</td>
+            <td>{{.Author}}</td>
+            <td>{{.ISBN}}</td>
+            <td>{{.Quantity}}</td>
+            <td>
+                <a href="/edit?id={{.ID}}">Edit</a> |
+                <a href="/delete?id={{.ID}}">Delete</a>
+            </td>
+        </tr>
+        {{end}}
+    </table>
+
+    <h2>Add New Book</h2>
+    <form action="/create" method="post">
+        <label>Title:</label>
+        <input type="text" name="title" required><br>
+
+        <label>Author:</label>
+        <input type="text" name="author" required><br>
+
+        <label>ISBN:</label>
+        <input type="text" name="isbn" required><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity" required><br>
+
+        <input type="submit" value="Add Book">
+    </form>
+</body>
+</html>

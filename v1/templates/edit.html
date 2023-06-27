@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Book Details</title>
+</head>
+<body>
+    <h1>Edit Book Details</h1>
+
+    <form action="/update" method="post">
+        <input type="hidden" name="id" value="{{.ID}}">
+
+        <label>Title:</label>
+        <input type="text" name="title" value="{{.Title}}" required><br>
+
+        <label>Author:</label>
+        <input type="text" name="author" value="{{.Author}}" required><br>
+
+        <label>ISBN:</label>
+        <input type="text" name="isbn" value="{{.ISBN}}" required><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity" value="{{.Quantity}}" required><br>
+
+        <input type="submit" value="Update Book">
+    </form>
+</body>
+</html>
