@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{.title}}</title>
+</head>
+<body>
+	<h1>{{.title}}</h1>
+	<a href="/books/new">Add New Book</a>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Publisher</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{range .books}}
+			<tr>
+				<td>{{.ID}}</td>
+				<td>{{.Title}}</td>
+				<td>{{.Author}}</td>
+				<td>{{.Publisher}}</td>
+				<td>
+					<a href="/books/edit/{{.ID}}">Edit</a>
+					<a href="/books/delete/{{.ID}}">Delete</a>
+				</td>
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
+</body>
+</html>

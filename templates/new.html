@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{.title}}</title>
+</head>
+<body>
+	<h1>{{.title}}</h1>
+	<form action="/books" method="post">
+		<label>Title:</label>
+		<input type="text" name="title" required><br>
+
+		<label>Author:</label>
+		<input type="text" name="author" required><br>
+
+		<label>Publisher:</label>
+		<input type="text" name="publisher" required><br>
+
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
